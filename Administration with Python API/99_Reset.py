@@ -27,7 +27,7 @@ for demogroup in foundGroups:
 
 #remove created items:
 print("Searching for items")
-itemsToRemove = gis.content.search(query='tags:"DevSummit2022"')
+itemsToRemove = gis.content.search(query='tags:"DevSummit2022"',max_items=1000)
 print(f"found: {len(itemsToRemove)}")
 for item in itemsToRemove:
     print(f"Start deleting item: {item.title} , {item.type} ({item.id})")

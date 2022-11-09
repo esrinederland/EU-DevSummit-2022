@@ -11,24 +11,13 @@ FirstName = "Berlin"
 LastName = "Bear"
 EmailAddress = "developers@esri.nl"
 UserDesc = "This is a newly created user for the EU DevSummit 2022. The word is:"
-UserType= "creatorUT"
-RoleName = "DevSummit DemoRole"
+UserType= "Viewer"
 UserImage = r"D:\Data\User_Image.png"
 roleId = "iAAAAAAAAAAAAAAA" #defaults to viewer role
 
 print("Creating user")
-newUser = gis.users.create(NewUsername, PassWord, FirstName, LastName, EmailAddress, UserDesc, role="iAAAAAAAAAAAAAAA", user_type = "Viewer")
+newUser = gis.users.create(NewUsername, PassWord, FirstName, LastName, EmailAddress, UserDesc, role=roleId, user_type = UserType)
 print(newUser)
-
-print("Update license type:")
-newUser.update_license_type("Creator")
-
-print("Searching for role id")
-for role in gis.users.roles.all():
-    if role.name==RoleName:
-        roleId = role.role_id
-print("Updating role")
-newUser.update_role(roleId)
 
 
 print("Updating user thumbnail")
