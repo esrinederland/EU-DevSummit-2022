@@ -5,6 +5,22 @@ gis = arcgis.GIS(PortalUrl, profile=ProfileName,verify_cert=False)
 print("Successfully logged into '{}' via the '{}' user".format(gis.properties.portalHostname,gis.properties.user.username)) 
 
 #Reset Look and Feel
+# Change home page title
+homePageJson = gis._con.get(f"https://{gis.properties.portalHostname}/sharing/rest/portals/self/resources/home.page.json?f=json")
+
+newTitle = "EsriNL DevTeam ArcGIS Enterprise"
+homePageJson["header"]["title"] = newTitle
+
+updateHomePageUrl = f"https://{gis.properties.portalHostname}/sharing/rest/portals/self/addResource"
+updateHomePageParams = {}
+updateHomePageParams["key"] = "home.page.json"
+updateHomePageParams["text"] = homePageJson
+updateHomePageParams["f"] = "json"
+
+updateHomePageJson = gis._con.post(updateHomePageUrl, params=updateHomePageParams)
+
+# Change portal title
+gis.admin.ux.name = f"DevTeam Portal"
 
 #Remove created users
 print("finding demo user")

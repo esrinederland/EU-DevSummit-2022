@@ -5,6 +5,7 @@ print("Getting GIS")
 gis = arcgis.GIS(PortalUrl, profile=ProfileName)
 print("Successfully logged into '{}' via the '{}' user".format(gis.properties.portalHostname,gis.properties.user.username)) 
 
+# CREATE A NEW GROUP
 GroupTitle = "Doomed To Stay"
 GroupDescription = "This is a group created for the EU DevSummit 2022. The word is:"
 GroupTags = "DevSummit2022, Demo, NoLeaving"
