@@ -30,5 +30,3 @@ editDatTime = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
 gis.admin.ux.name = f"Our Fabulous portal {editDatTime}"
 
 # sign in to dashboard using incognito: https://devteam.esri.nl/portal/apps/dashboards/home
-
-# CHANGE FEATURED ITEMS
