@@ -11,7 +11,7 @@ print("Successfully logged into '{}' via the '{}' user".format(gis.properties.po
 homePageJson = gis._con.get(f"https://{gis.properties.portalHostname}/sharing/rest/portals/self/resources/home.page.json?f=json")
 print(homePageJson)
 
-newTitle = "EsriNL DevTeam ArcGIS Enterprise"
+newTitle = "Dev Summit Berlin 2022"
 homePageJson["header"]["title"] = newTitle
 
 updateHomePageUrl = f"https://{gis.properties.portalHostname}/sharing/rest/portals/self/addResource"
