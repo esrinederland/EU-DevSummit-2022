@@ -1,0 +1,377 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--
+    ArcGIS API for JavaScript, https://js.arcgis.com
+    For more information about the visualization-dictionary sample, read the original sample description at developers.arcgis.com.
+    https://developers.arcgis.com/javascript/latest/sample-code/visualization-dictionary/index.html
+    -->
+
+    <title>Spotify Map</title>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet"
+        href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/css/calcite-web.min.css" />
+    <link rel="stylesheet" href="https://jsdev.arcgis.com/4.19/esri/themes/dark/main.css" />
+    <script src="https://jsdev.arcgis.com/4.19/"></script>
+    <style>
+        @font-face {
+            font-family: 'proxima_nova_rgregular';
+            src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+            src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+                url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+                url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+                url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        h3,
+        h4,
+        h5 {
+            font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+        }
+
+        #header {
+            height: 60px;
+            padding: 10px 0px 0px 15px;
+            background-color: #282828;
+            color: #1DB954;
+            font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+        }
+
+        #spotify-logo {
+            height: 60px;
+            float: left;
+        }
+
+        #header-text {
+            line-height: 60px;
+            padding-left: 112px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        #btnTxt {
+            font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+            color: white;
+        }
+
+        #songButton {
+            display: none;
+            margin: 10px;
+            padding: 15px;
+            background-color: #1DB954;
+            border-radius: 16px;
+            border-color: #1DB954;
+            size: 64px;
+            color: white;
+        }
+
+        #songButton:hover {
+            opacity: 0.7;
+        }
+
+        .footer {
+            padding-top: 0px;
+            background-color: #282828;
+        }
+
+        .panel-dark {
+            padding: 10px;
+        }
+
+        #songPanel {
+            width: 400px;
+            padding-bottom: 0px;
+        }
+
+        .esri-expand__content {
+            max-height: none !important;
+        }
+    </style>
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/widgets/Expand",
+            "esri/layers/FeatureLayer",
+            "esri/layers/GraphicsLayer",
+            "esri/Graphic",
+            "esri/tasks/support/Query",
+            "esri/widgets/Locate",
+            "esri/widgets/Search",
+            "esri/tasks/Locator",
+            "esri/request",
+            "esri/config"
+        ], function (
+            Map,
+            MapView, Expand, FeatureLayer,
+            GraphicsLayer, Graphic,
+            Query,
+            Locate, Search, Locator,
+            esriRequest, esriConfig
+        ) {
+
+            // Generate a Spotify token
+            var bearerToken;
+            if (!bearerToken) {
+                generateToken();
+            };
+
+            // Map
+            const map = new Map({
+                basemap: "arcgis-dark-gray"
+            });
+
+            // Point layer for Graphics
+            var pointLayer = new GraphicsLayer();
+            map.add(pointLayer);
+
+            // Locator to get city
+            var locatorTask = new Locator({
+                url: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
+            });
+
+            // MapView
+            const view = new MapView({
+                container: "viewDiv",
+                map: map,
+                center: [5.2793703, 52.2129919],
+                zoom: 8
+            });
+
+            // Search Widget with custom Search function
+            var search = new Search({
+                view: view,
+                popupEnabled: false,
+                resultGraphicEnabled: false,
+                goToOverride: function (view, goToParams) {
+
+                    // Zoom to found location
+                    view.goTo(goToParams.target);
+
+                    // Add Graphic
+                    var point = goToParams.target.target.geometry;
+                    addSymbol(point);
+
+                    // Get the city name from the found location
+                    if (goToParams.target.target.attributes.Addr_type == "Locality" && goToParams.target.target.attributes.City == "") {
+                        var cityName = goToParams.target.target.attributes.Match_addr;
+                    }
+                    else {
+                        var cityName = goToParams.target.target.attributes.City;
+                    }
+
+                    // Get song for given city
+                    getSongForCity(cityName);
+                    AddAction("spotifySearch", cityName);
+                }
+            });
+            view.ui.add(search, "top-right");
+
+            // Locate Widget with custom Locate Function
+            var locate = new Locate({
+                view: view,
+                resultGraphicEnabled: false,
+                goToOverride: function (view, goToParams) {
+
+                    // Zoom to found location
+                    view.goTo(goToParams.target);
+
+                    // Find songs for current location
+                    var point = goToParams.target.target;
+                    getCityFromPoint(point);
+
+                }
+            });
+            view.ui.add(locate, "top-left");
+
+            // Expand to show found song information
+            var expand = new Expand({
+                expanded: true,
+                view: view,
+                content: document.getElementById("songPanel")
+            });
+            view.ui.add(expand, "bottom-right");
+
+            // On click event to find song for clicked location
+            view.on("click", function (event) {
+
+                // Get song for clicked location
+                var mapPoint = event.mapPoint;
+                getCityFromPoint(mapPoint);
+            });
+
+            // Spotify generate token (get from ArcGIS Feature Service)
+            function generateToken() {
+
+                esriConfig.apiKey = "<YOUR API KEY>";
+
+                const layer = new FeatureLayer({
+                    url: "https://services9.arcgis.com/VFpG6hOzsWy7Gvmg/arcgis/rest/services/SpotifyTokenLayer/FeatureServer/0"
+                });
+
+                const query = new Query();
+                query.where = "1=1";
+                query.outFields = ["*"];
+
+                layer.queryFeatures(query).then(function (results) {
+                    bearerToken = results.features[0].attributes["SpotifyToken"];
+                });
+            };
+
+            // Get city from point
+            function getCityFromPoint(point) {
+
+                // Add point to map
+                addSymbol(point);
+
+                // LocatorTask to find city name
+                var params = {
+                    location: point
+                };
+                locatorTask.locationToAddress(params).then(function (response) {
+                    if (response.attributes.Type == "City") {
+                        var cityName = response.address;
+                    } else if (response.attributes.City == "") {
+                        var cityName = response.attributes.Subregion;
+                    } else {
+                        var cityName = response.attributes.City;
+                    }
+
+                    // Get song for given city
+                    getSongForCity(cityName);
+                    AddAction("spotifyMapClick", cityName);
+                });
+            };
+
+            // Add symbol to the map
+            function addSymbol(point) {
+
+                // Remove existing graphics
+                pointLayer.removeAll();
+
+                // Point symbol with Spotify Logo
+                var pointSym = {
+                    type: "picture-marker",
+                    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/600px-Spotify_logo_without_text.svg.png",
+                    width: 25,
+                    height: 25
+                };
+                pointLayer.add(
+                    new Graphic({
+                        geometry: point,
+                        symbol: pointSym
+                    })
+                );
+            };
+
+            // Spotify search song using city
+            function getSongForCity(cityName) {
+                // Wait for a valid Spotify Token
+                if (!bearerToken) {
+                    generateToken();
+                }
+                else {
+                    var searchUrl = "https://api.spotify.com/v1/search";
+                    var options = {
+                        headers: {
+                            "Authorization": "Bearer " + bearerToken,
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        responseType: "json",
+                        query: {
+                            // Query using city name
+                            q: cityName,
+                            type: "track"
+                        }
+                    };
+                    esriRequest(searchUrl, options).then(function (response) {
+                        var results = response.data.tracks.items;
+                        if (results.length > 0) {
+
+                            // Select random song from found results
+                            var song = results[Math.floor(Math.random() * results.length)];
+
+                            // Fill content panel with song info
+                            setContentPanel(song, cityName);
+                        }
+                        else {
+                            // If no songs are found...
+                            searchUrl = "https://api.spotify.com/v1/tracks/6wpGqhRvJGNNXwWlPmkMyO"
+                            var options = {
+                                headers: {
+                                    "Authorization": "Bearer " + bearerToken,
+                                    "Content-Type": "application/json",
+                                    "Accept": "application/json"
+                                },
+                                responseType: "json"
+                            };
+                            esriRequest(searchUrl, options).then(function (response) {
+                                var song = response.data;
+
+                                // Fill content panel with song info
+                                setContentPanel(song, cityName);
+                            });
+                        };
+
+                    });
+                };
+            };
+
+            // Set content panel
+            function setContentPanel(song, cityName) {
+                document.getElementById("city").innerHTML = "Song for: " + cityName;
+                document.getElementById("title").innerHTML = song.name;
+                document.getElementById("artist").innerHTML = song.artists.map(({ name }) => name).join(', ');
+                document.getElementById("album").src = song.album.images[1].url;
+                document.getElementById("songUrl").action = song.external_urls.spotify;
+                document.getElementById("songButton").style = "display: block;"
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="header" class="panel-dark-blue">
+        <img src="https://cdn2.downdetector.com/static/uploads/logo/Spotify_Logo_RGB_Green.png" id="spotify-logo"></img>
+        <h3 id="header-text">Map</h3>
+    </div>
+    <div id="viewDiv"></div>
+    <div class="panel-dark" id="songPanel" role="contentinfo">
+        <h4 id="city"></h4>
+        <h3 id="title"></h3>
+        <h5 id="artist">Click on a city or use the Search bar to find songs on Spotify</h5>
+        <img id="album">
+        <form id="songUrl" method="get" target="_blank">
+            <button id="songButton" type="submit" class="esri-icon esri-icon-play">
+                <span id="btnTxt">Play in Spotify</span>
+            </button>
+        </form>
+    </div>
+    <div class="footer">
+        <!-- content of footer -->
+        <div class="esri-logo-reverse"></div>
+    </div>
+</body>
+<script src="https://esrinederland.github.io/CoolMonitor/CoolMonitor.js"></script>
+
+</html>

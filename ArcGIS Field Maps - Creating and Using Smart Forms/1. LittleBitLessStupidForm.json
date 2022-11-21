@@ -1,0 +1,939 @@
+{
+    "operationalLayers": [
+        {
+            "id": "1841f0127d0-layer-13",
+            "title": "MotorcycleManagement_2 - Motorcycles",
+            "url": "https://services.arcgis.com/emS4w7iyWEQiulAb/arcgis/rest/services/MotorcycleManagement_2/FeatureServer/0",
+            "itemId": "33e6a38c6cdd4a65bdacd9b42acd7b48",
+            "layerType": "ArcGISFeatureLayer",
+            "formInfo": {
+                "formElements": [
+                    {
+                        "label": "General",
+                        "type": "group",
+                        "formElements": [
+                            {
+                                "label": "Room",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "Room",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "maxLength": 256,
+                                    "minLength": 0
+                                }
+                            },
+                            {
+                                "label": "Time Arrived in Shop",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "TimeArrived",
+                                "inputType": {
+                                    "type": "datetime-picker",
+                                    "includeTime": true
+                                }
+                            },
+                            {
+                                "label": "Accepted by",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "AcceptedPerson",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "maxLength": 20,
+                                    "minLength": 0
+                                }
+                            }
+                        ],
+                        "initialState": "expanded"
+                    },
+                    {
+                        "label": "Motorcycle",
+                        "type": "group",
+                        "formElements": [
+                            {
+                                "label": "License Plate",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "LicensePlate",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "maxLength": 256,
+                                    "minLength": 0
+                                }
+                            },
+                            {
+                                "label": "Manufacturer",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "Manufacturer",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "maxLength": 20,
+                                    "minLength": 0
+                                }
+                            },
+                            {
+                                "label": "Model",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "Model",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "maxLength": 20,
+                                    "minLength": 0
+                                }
+                            },
+                            {
+                                "label": "Year",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "ManYear",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "minLength": 0
+                                }
+                            },
+                            {
+                                "label": "Purchase Price",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "PurchasePrice",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "minLength": 0
+                                }
+                            }
+                        ],
+                        "initialState": "expanded"
+                    },
+                    {
+                        "label": "After Washing",
+                        "type": "group",
+                        "formElements": [
+                            {
+                                "label": "Maintenance Required",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "MaintenanceRequired",
+                                "inputType": {
+                                    "type": "combo-box",
+                                    "showNoValueOption": false
+                                }
+                            },
+                            {
+                                "label": "Time Washing Done",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "WashingTime",
+                                "inputType": {
+                                    "type": "datetime-picker",
+                                    "includeTime": true
+                                }
+                            },
+                            {
+                                "label": "Washing Performed by",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "WashingPerson",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "maxLength": 20,
+                                    "minLength": 0
+                                }
+                            }
+                        ],
+                        "initialState": "expanded"
+                    },
+                    {
+                        "label": "Workshop",
+                        "type": "group",
+                        "formElements": [
+                            {
+                                "label": "Chain Maintenance Required",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "ChainMaintenanceRequired",
+                                "inputType": {
+                                    "type": "switch",
+                                    "offValue": "No",
+                                    "onValue": "Yes"
+                                }
+                            },
+                            {
+                                "label": "Tyre Change Required",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "TyreChangeRequired",
+                                "inputType": {
+                                    "type": "switch",
+                                    "offValue": "No",
+                                    "onValue": "Yes"
+                                }
+                            },
+                            {
+                                "label": "Time Arrived in Workshop",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "WorkshopTime",
+                                "inputType": {
+                                    "type": "datetime-picker",
+                                    "includeTime": true
+                                }
+                            },
+                            {
+                                "label": "Put in Workshop by",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "WorkshopPerson",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "maxLength": 20,
+                                    "minLength": 0
+                                }
+                            }
+                        ],
+                        "initialState": "expanded"
+                    },
+                    {
+                        "label": "After Workshop",
+                        "type": "group",
+                        "formElements": [
+                            {
+                                "label": "Chain Maintenance Performed",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "ChainMaintenancePerformed",
+                                "inputType": {
+                                    "type": "switch",
+                                    "offValue": "No",
+                                    "onValue": "Yes"
+                                }
+                            },
+                            {
+                                "label": "Tyre Maintenance Performed",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "TyreMaintenancePerformed",
+                                "inputType": {
+                                    "type": "switch",
+                                    "offValue": "No",
+                                    "onValue": "Yes"
+                                }
+                            },
+                            {
+                                "label": "Time Maintenance Done",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "MaintenanceDoneTime",
+                                "inputType": {
+                                    "type": "datetime-picker",
+                                    "includeTime": true
+                                }
+                            },
+                            {
+                                "label": "Maintenance Performed by",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "MaintenancePerson",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "maxLength": 20,
+                                    "minLength": 0
+                                }
+                            },
+                            {
+                                "label": "Showroom Ready?",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "ShowroomReady",
+                                "inputType": {
+                                    "type": "combo-box",
+                                    "showNoValueOption": false
+                                }
+                            }
+                        ],
+                        "initialState": "expanded"
+                    },
+                    {
+                        "label": "Showroom",
+                        "type": "group",
+                        "formElements": [
+                            {
+                                "label": "Retail Price",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "RetailPrice",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "minLength": 0
+                                }
+                            },
+                            {
+                                "label": "Time Arrived in Showroom",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "ShowroomTime",
+                                "inputType": {
+                                    "type": "datetime-picker",
+                                    "includeTime": true
+                                }
+                            },
+                            {
+                                "label": "Put in Showroom by",
+                                "type": "field",
+                                "editable": true,
+                                "fieldName": "ShowroomPerson",
+                                "inputType": {
+                                    "type": "text-box",
+                                    "maxLength": 20,
+                                    "minLength": 0
+                                }
+                            }
+                        ],
+                        "initialState": "expanded"
+                    }
+                ],
+                "expressionInfos": [],
+                "title": "New Motorcycle"
+            }
+        },
+        {
+            "id": "1841d6ffd6f-layer-1",
+            "title": "MotorcycleManagement_2",
+            "layers": [
+                {
+                    "id": "1841d700082-layer-2",
+                    "showLegend": false,
+                    "title": "Rooms",
+                    "url": "https://services.arcgis.com/emS4w7iyWEQiulAb/arcgis/rest/services/MotorcycleManagement_2/FeatureServer/1",
+                    "itemId": "33e6a38c6cdd4a65bdacd9b42acd7b48",
+                    "layerType": "ArcGISFeatureLayer",
+                    "layerDefinition": {
+                        "orderBy": [
+                            {
+                                "field": "Room",
+                                "order": "asc"
+                            }
+                        ],
+                        "featureReduction": null,
+                        "drawingInfo": {
+                            "labelingInfo": [
+                                {
+                                    "labelExpression": "[RoomName]",
+                                    "labelExpressionInfo": {
+                                        "expression": "$feature[\"RoomName\"]"
+                                    },
+                                    "labelPlacement": "esriServerPolygonPlacementAlwaysHorizontal",
+                                    "maxScale": 0,
+                                    "minScale": 2085.06064,
+                                    "repeatLabel": true,
+                                    "symbol": {
+                                        "type": "esriTS",
+                                        "color": [
+                                            0,
+                                            0,
+                                            0,
+                                            255
+                                        ],
+                                        "font": {
+                                            "family": "Avenir Next LT Pro Light",
+                                            "size": 12,
+                                            "style": "italic"
+                                        },
+                                        "horizontalAlignment": "center",
+                                        "kerning": true,
+                                        "haloSize": 0,
+                                        "rotated": false,
+                                        "text": "",
+                                        "verticalAlignment": "baseline",
+                                        "xoffset": 0,
+                                        "yoffset": 0,
+                                        "angle": 0
+                                    }
+                                }
+                            ],
+                            "renderer": {
+                                "type": "uniqueValue",
+                                "visualVariables": [],
+                                "field1": "Room",
+                                "defaultLabel": "Other",
+                                "defaultSymbol": {
+                                    "type": "esriSFS",
+                                    "color": [
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "outline": {
+                                        "type": "esriSLS",
+                                        "color": [
+                                            74,
+                                            74,
+                                            74,
+                                            255
+                                        ],
+                                        "width": 3.75,
+                                        "style": "esriSLSSolid"
+                                    },
+                                    "style": "esriSFSSolid"
+                                },
+                                "uniqueValueInfos": [
+                                    {
+                                        "label": "Showroom",
+                                        "symbol": {
+                                            "type": "esriSFS",
+                                            "color": [
+                                                191,
+                                                211,
+                                                224,
+                                                255
+                                            ],
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    103,
+                                                    104,
+                                                    106,
+                                                    255
+                                                ],
+                                                "width": 1.5,
+                                                "style": "esriSLSSolid"
+                                            },
+                                            "style": "esriSFSSolid"
+                                        },
+                                        "value": "1"
+                                    },
+                                    {
+                                        "label": "Parking",
+                                        "symbol": {
+                                            "type": "esriSFS",
+                                            "color": [
+                                                229,
+                                                229,
+                                                229,
+                                                255
+                                            ],
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    103,
+                                                    104,
+                                                    106,
+                                                    255
+                                                ],
+                                                "width": 1.5,
+                                                "style": "esriSLSSolid"
+                                            },
+                                            "style": "esriSFSSolid"
+                                        },
+                                        "value": "4"
+                                    },
+                                    {
+                                        "label": "Washing",
+                                        "symbol": {
+                                            "type": "esriSFS",
+                                            "color": [
+                                                147,
+                                                174,
+                                                194,
+                                                255
+                                            ],
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    103,
+                                                    104,
+                                                    106,
+                                                    255
+                                                ],
+                                                "width": 1.5,
+                                                "style": "esriSLSSolid"
+                                            },
+                                            "style": "esriSFSSolid"
+                                        },
+                                        "value": "3"
+                                    },
+                                    {
+                                        "label": "Workshop",
+                                        "symbol": {
+                                            "type": "esriSFS",
+                                            "color": [
+                                                198,
+                                                201,
+                                                207,
+                                                255
+                                            ],
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    103,
+                                                    104,
+                                                    106,
+                                                    255
+                                                ],
+                                                "width": 1.5,
+                                                "style": "esriSLSSolid"
+                                            },
+                                            "style": "esriSFSSolid"
+                                        },
+                                        "value": "2"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "effect": null,
+                    "showLabels": true,
+                    "popupInfo": {
+                        "popupElements": [
+                            {
+                                "type": "fields",
+                                "description": "",
+                                "fieldInfos": [
+                                    {
+                                        "fieldName": "Room",
+                                        "label": "Room",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "RoomName",
+                                        "label": "RoomName",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "GlobalID",
+                                        "label": "GlobalID",
+                                        "visible": true
+                                    }
+                                ],
+                                "title": ""
+                            }
+                        ],
+                        "expressionInfos": [],
+                        "fieldInfos": [
+                            {
+                                "fieldName": "OBJECTID",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "label": "OBJECTID",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "GlobalID",
+                                "label": "GlobalID",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "Shape__Area",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "label": "Shape__Area",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "Shape__Length",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "label": "Shape__Length",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "Room",
+                                "label": "Room",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "RoomName",
+                                "label": "RoomName",
+                                "visible": true
+                            }
+                        ],
+                        "title": "{RoomName}"
+                    }
+                },
+                {
+                    "id": "1841d700083-layer-3",
+                    "title": "Motorcycles",
+                    "url": "https://services.arcgis.com/emS4w7iyWEQiulAb/arcgis/rest/services/MotorcycleManagement_2/FeatureServer/0",
+                    "itemId": "33e6a38c6cdd4a65bdacd9b42acd7b48",
+                    "layerType": "ArcGISFeatureLayer",
+                    "effect": null,
+                    "formInfo": {
+                        "formElements": [
+                            {
+                                "label": "General",
+                                "type": "group",
+                                "formElements": [
+                                    {
+                                        "label": "Room",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "Room",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 256,
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Time Arrived in Shop",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "TimeArrived",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        }
+                                    },
+                                    {
+                                        "label": "Accepted by",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "AcceptedPerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        }
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            },
+                            {
+                                "label": "Motorcycle",
+                                "type": "group",
+                                "visibilityExpression": "expr0",
+                                "formElements": [
+                                    {
+                                        "label": "License Plate",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "LicensePlate",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 256,
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Manufacturer",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "Manufacturer",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Model",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "Model",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Year",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "ManYear",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Purchase Price",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "PurchasePrice",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "minLength": 0
+                                        }
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            },
+                            {
+                                "label": "After Washing",
+                                "type": "group",
+                                "visibilityExpression": "expr1",
+                                "formElements": [
+                                    {
+                                        "label": "Maintenance Required",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "MaintenanceRequired",
+                                        "inputType": {
+                                            "type": "combo-box",
+                                            "showNoValueOption": false
+                                        }
+                                    },
+                                    {
+                                        "label": "Time Washing Done",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "WashingTime",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        }
+                                    },
+                                    {
+                                        "label": "Washing Performed by",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "WashingPerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        }
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            },
+                            {
+                                "label": "Workshop",
+                                "type": "group",
+                                "visibilityExpression": "expr2",
+                                "formElements": [
+                                    {
+                                        "label": "Chain Maintenance Required",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "ChainMaintenanceRequired",
+                                        "inputType": {
+                                            "type": "switch",
+                                            "offValue": "No",
+                                            "onValue": "Yes"
+                                        }
+                                    },
+                                    {
+                                        "label": "Tyre Change Required",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "TyreChangeRequired",
+                                        "inputType": {
+                                            "type": "switch",
+                                            "offValue": "No",
+                                            "onValue": "Yes"
+                                        }
+                                    },
+                                    {
+                                        "label": "Time Arrived in Workshop",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "WorkshopTime",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        }
+                                    },
+                                    {
+                                        "label": "Put in Workshop by",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "WorkshopPerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        }
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            },
+                            {
+                                "label": "After Workshop",
+                                "type": "group",
+                                "visibilityExpression": "expr1",
+                                "formElements": [
+                                    {
+                                        "label": "Chain Maintenance Performed",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "ChainMaintenancePerformed",
+                                        "inputType": {
+                                            "type": "switch",
+                                            "offValue": "No",
+                                            "onValue": "Yes"
+                                        }
+                                    },
+                                    {
+                                        "label": "Tyre Maintenance Performed",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "TyreMaintenancePerformed",
+                                        "inputType": {
+                                            "type": "switch",
+                                            "offValue": "No",
+                                            "onValue": "Yes"
+                                        }
+                                    },
+                                    {
+                                        "label": "Time Maintenance Done",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "MaintenanceDoneTime",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        }
+                                    },
+                                    {
+                                        "label": "Maintenance Performed by",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "MaintenancePerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Showroom Ready?",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "ShowroomReady",
+                                        "inputType": {
+                                            "type": "combo-box",
+                                            "showNoValueOption": false
+                                        }
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            },
+                            {
+                                "label": "Showroom",
+                                "type": "group",
+                                "visibilityExpression": "expr3",
+                                "formElements": [
+                                    {
+                                        "label": "Retail Price",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "RetailPrice",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Time Arrived in Showroom",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "ShowroomTime",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        }
+                                    },
+                                    {
+                                        "label": "Put in Showroom by",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "ShowroomPerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        }
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            }
+                        ],
+                        "expressionInfos": [
+                            {
+                                "expression": "DomainName($feature, \"Room\") == \"Washing\"",
+                                "name": "expr0",
+                                "returnType": "boolean",
+                                "title": "New Expression"
+                            },
+                            {
+                                "expression": "DomainName($feature, \"Room\") == \"Parking\"",
+                                "name": "expr1",
+                                "returnType": "boolean",
+                                "title": "New Expression 2"
+                            },
+                            {
+                                "expression": "DomainName($feature, \"Room\") == \"Workshop\"",
+                                "name": "expr2",
+                                "returnType": "boolean",
+                                "title": "New Expression 3"
+                            },
+                            {
+                                "expression": "DomainName($feature, \"Room\") == \"Showroom\"",
+                                "name": "expr3",
+                                "returnType": "boolean",
+                                "title": "New Expression 4"
+                            }
+                        ],
+                        "title": "New Motorcycle"
+                    }
+                }
+            ],
+            "layerType": "GroupLayer"
+        }
+    ],
+    "baseMap": {
+        "baseMapLayers": [
+            {
+                "id": "VectorTile_1970",
+                "opacity": 1,
+                "title": "Light Gray Base",
+                "visibility": true,
+                "layerType": "VectorTileLayer",
+                "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/291da5eab3a0412593b66d384379f89f/resources/styles/root.json"
+            },
+            {
+                "id": "VectorTile_7117",
+                "opacity": 1,
+                "title": "Light Gray Reference",
+                "visibility": true,
+                "layerType": "VectorTileLayer",
+                "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/1768e8369a214dfab4e2167d5c5f2454/resources/styles/root.json",
+                "isReference": true
+            }
+        ],
+        "title": "Light Gray Canvas"
+    },
+    "authoringApp": "ArcGIS Field Maps",
+    "authoringAppVersion": "22.2.1+b12d2cd",
+    "initialState": {
+        "viewpoint": {
+            "rotation": 0.8287179784783366,
+            "targetGeometry": {
+                "spatialReference": {
+                    "latestWkid": 3857,
+                    "wkid": 102100
+                },
+                "xmin": 1490710.9779312254,
+                "ymin": 6893107.40171098,
+                "xmax": 1491015.8302978475,
+                "ymax": 6893297.449244138
+            }
+        }
+    },
+    "spatialReference": {
+        "latestWkid": 3857,
+        "wkid": 102100
+    },
+    "version": "2.24"
+}

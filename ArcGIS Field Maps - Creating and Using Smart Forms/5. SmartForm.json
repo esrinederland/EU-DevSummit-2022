@@ -1,0 +1,1513 @@
+{
+    "operationalLayers": [
+        {
+            "id": "1841d6ffd6f-layer-1",
+            "title": "MotorcycleManagement_2",
+            "layers": [
+                {
+                    "id": "1841d700082-layer-2",
+                    "showLegend": false,
+                    "title": "Rooms",
+                    "url": "https://services.arcgis.com/emS4w7iyWEQiulAb/arcgis/rest/services/MotorcycleManagement_2/FeatureServer/1",
+                    "itemId": "33e6a38c6cdd4a65bdacd9b42acd7b48",
+                    "layerType": "ArcGISFeatureLayer",
+                    "layerDefinition": {
+                        "orderBy": [
+                            {
+                                "field": "Room",
+                                "order": "asc"
+                            }
+                        ],
+                        "featureReduction": null,
+                        "drawingInfo": {
+                            "labelingInfo": [
+                                {
+                                    "labelExpression": "[RoomName]",
+                                    "labelExpressionInfo": {
+                                        "expression": "$feature[\"RoomName\"]"
+                                    },
+                                    "labelPlacement": "esriServerPolygonPlacementAlwaysHorizontal",
+                                    "maxScale": 0,
+                                    "minScale": 2085.06064,
+                                    "repeatLabel": true,
+                                    "symbol": {
+                                        "type": "esriTS",
+                                        "color": [
+                                            0,
+                                            0,
+                                            0,
+                                            255
+                                        ],
+                                        "font": {
+                                            "family": "Avenir Next LT Pro Light",
+                                            "size": 12,
+                                            "style": "italic"
+                                        },
+                                        "horizontalAlignment": "center",
+                                        "kerning": true,
+                                        "haloSize": 0,
+                                        "rotated": false,
+                                        "text": "",
+                                        "verticalAlignment": "baseline",
+                                        "xoffset": 0,
+                                        "yoffset": 0,
+                                        "angle": 0
+                                    }
+                                }
+                            ],
+                            "renderer": {
+                                "type": "uniqueValue",
+                                "visualVariables": [],
+                                "field1": "Room",
+                                "defaultLabel": "Other",
+                                "defaultSymbol": {
+                                    "type": "esriSFS",
+                                    "color": [
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "outline": {
+                                        "type": "esriSLS",
+                                        "color": [
+                                            74,
+                                            74,
+                                            74,
+                                            255
+                                        ],
+                                        "width": 3.75,
+                                        "style": "esriSLSSolid"
+                                    },
+                                    "style": "esriSFSSolid"
+                                },
+                                "uniqueValueGroups": [
+                                    {
+                                        "classes": [
+                                            {
+                                                "label": "Showroom",
+                                                "symbol": {
+                                                    "type": "esriSFS",
+                                                    "color": [
+                                                        191,
+                                                        211,
+                                                        224,
+                                                        255
+                                                    ],
+                                                    "outline": {
+                                                        "type": "esriSLS",
+                                                        "color": [
+                                                            103,
+                                                            104,
+                                                            106,
+                                                            255
+                                                        ],
+                                                        "width": 1.5,
+                                                        "style": "esriSLSSolid"
+                                                    },
+                                                    "style": "esriSFSSolid"
+                                                },
+                                                "values": [
+                                                    [
+                                                        "1"
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "label": "Parking",
+                                                "symbol": {
+                                                    "type": "esriSFS",
+                                                    "color": [
+                                                        229,
+                                                        229,
+                                                        229,
+                                                        255
+                                                    ],
+                                                    "outline": {
+                                                        "type": "esriSLS",
+                                                        "color": [
+                                                            103,
+                                                            104,
+                                                            106,
+                                                            255
+                                                        ],
+                                                        "width": 1.5,
+                                                        "style": "esriSLSSolid"
+                                                    },
+                                                    "style": "esriSFSSolid"
+                                                },
+                                                "values": [
+                                                    [
+                                                        "4"
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "label": "Washing",
+                                                "symbol": {
+                                                    "type": "esriSFS",
+                                                    "color": [
+                                                        147,
+                                                        174,
+                                                        194,
+                                                        255
+                                                    ],
+                                                    "outline": {
+                                                        "type": "esriSLS",
+                                                        "color": [
+                                                            103,
+                                                            104,
+                                                            106,
+                                                            255
+                                                        ],
+                                                        "width": 1.5,
+                                                        "style": "esriSLSSolid"
+                                                    },
+                                                    "style": "esriSFSSolid"
+                                                },
+                                                "values": [
+                                                    [
+                                                        "3"
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "label": "Workshop",
+                                                "symbol": {
+                                                    "type": "esriSFS",
+                                                    "color": [
+                                                        198,
+                                                        201,
+                                                        207,
+                                                        255
+                                                    ],
+                                                    "outline": {
+                                                        "type": "esriSLS",
+                                                        "color": [
+                                                            103,
+                                                            104,
+                                                            106,
+                                                            255
+                                                        ],
+                                                        "width": 1.5,
+                                                        "style": "esriSLSSolid"
+                                                    },
+                                                    "style": "esriSFSSolid"
+                                                },
+                                                "values": [
+                                                    [
+                                                        "2"
+                                                    ]
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "uniqueValueInfos": [
+                                    {
+                                        "label": "Showroom",
+                                        "symbol": {
+                                            "type": "esriSFS",
+                                            "color": [
+                                                191,
+                                                211,
+                                                224,
+                                                255
+                                            ],
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    103,
+                                                    104,
+                                                    106,
+                                                    255
+                                                ],
+                                                "width": 1.5,
+                                                "style": "esriSLSSolid"
+                                            },
+                                            "style": "esriSFSSolid"
+                                        },
+                                        "value": "1"
+                                    },
+                                    {
+                                        "label": "Parking",
+                                        "symbol": {
+                                            "type": "esriSFS",
+                                            "color": [
+                                                229,
+                                                229,
+                                                229,
+                                                255
+                                            ],
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    103,
+                                                    104,
+                                                    106,
+                                                    255
+                                                ],
+                                                "width": 1.5,
+                                                "style": "esriSLSSolid"
+                                            },
+                                            "style": "esriSFSSolid"
+                                        },
+                                        "value": "4"
+                                    },
+                                    {
+                                        "label": "Washing",
+                                        "symbol": {
+                                            "type": "esriSFS",
+                                            "color": [
+                                                147,
+                                                174,
+                                                194,
+                                                255
+                                            ],
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    103,
+                                                    104,
+                                                    106,
+                                                    255
+                                                ],
+                                                "width": 1.5,
+                                                "style": "esriSLSSolid"
+                                            },
+                                            "style": "esriSFSSolid"
+                                        },
+                                        "value": "3"
+                                    },
+                                    {
+                                        "label": "Workshop",
+                                        "symbol": {
+                                            "type": "esriSFS",
+                                            "color": [
+                                                198,
+                                                201,
+                                                207,
+                                                255
+                                            ],
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    103,
+                                                    104,
+                                                    106,
+                                                    255
+                                                ],
+                                                "width": 1.5,
+                                                "style": "esriSLSSolid"
+                                            },
+                                            "style": "esriSFSSolid"
+                                        },
+                                        "value": "2"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "effect": null,
+                    "showLabels": true,
+                    "popupInfo": {
+                        "popupElements": [
+                            {
+                                "type": "fields",
+                                "description": "",
+                                "fieldInfos": [
+                                    {
+                                        "fieldName": "Room",
+                                        "label": "Room",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "RoomName",
+                                        "label": "RoomName",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "GlobalID",
+                                        "label": "GlobalID",
+                                        "visible": true
+                                    }
+                                ],
+                                "title": ""
+                            }
+                        ],
+                        "expressionInfos": [],
+                        "fieldInfos": [
+                            {
+                                "fieldName": "OBJECTID",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "label": "OBJECTID",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "GlobalID",
+                                "label": "GlobalID",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "Shape__Area",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "label": "Shape__Area",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "Shape__Length",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "label": "Shape__Length",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "Room",
+                                "label": "Room",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "RoomName",
+                                "label": "RoomName",
+                                "visible": true
+                            }
+                        ],
+                        "title": "{RoomName}"
+                    }
+                },
+                {
+                    "id": "1841d700083-layer-3",
+                    "title": "Motorcycles",
+                    "url": "https://services.arcgis.com/emS4w7iyWEQiulAb/arcgis/rest/services/MotorcycleManagement_2/FeatureServer/0",
+                    "itemId": "33e6a38c6cdd4a65bdacd9b42acd7b48",
+                    "layerType": "ArcGISFeatureLayer",
+                    "effect": null,
+                    "formInfo": {
+                        "formElements": [
+                            {
+                                "label": "General",
+                                "type": "group",
+                                "formElements": [
+                                    {
+                                        "label": "Room",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "Room",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 256,
+                                            "minLength": 0
+                                        },
+                                        "valueExpression": "expr/getroom"
+                                    },
+                                    {
+                                        "label": "Room GlobalID",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "RoomGlobalID",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 38,
+                                            "minLength": 0
+                                        },
+                                        "valueExpression": "expr/getroom-copy"
+                                    },
+                                    {
+                                        "label": "Time Arrived in Shop",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "TimeArrived",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        },
+                                        "valueExpression": "expr/currentdatewashing"
+                                    },
+                                    {
+                                        "label": "Accepted by",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "AcceptedPerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        },
+                                        "valueExpression": "expr/getuserfullnamewashing"
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            },
+                            {
+                                "label": "Motorcycle",
+                                "type": "group",
+                                "formElements": [
+                                    {
+                                        "label": "License Plate",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "LicensePlate",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 256,
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Manufacturer",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "Manufacturer",
+                                        "inputType": {
+                                            "type": "combo-box",
+                                            "showNoValueOption": false
+                                        }
+                                    },
+                                    {
+                                        "label": "Model",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "Model",
+                                        "inputType": {
+                                            "type": "combo-box",
+                                            "showNoValueOption": false
+                                        }
+                                    },
+                                    {
+                                        "label": "Year",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "ManYear",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Purchase Price",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "PurchasePrice",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "minLength": 0
+                                        }
+                                    }
+                                ],
+                                "initialState": "collapsed"
+                            },
+                            {
+                                "label": "After Washing",
+                                "type": "group",
+                                "visibilityExpression": "expr5",
+                                "formElements": [
+                                    {
+                                        "label": "Maintenance Required",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "MaintenanceRequired",
+                                        "inputType": {
+                                            "type": "combo-box",
+                                            "showNoValueOption": false
+                                        }
+                                    },
+                                    {
+                                        "label": "Time Washing Done",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "WashingTime",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        },
+                                        "valueExpression": "expr/currentdateparking1"
+                                    },
+                                    {
+                                        "label": "Washing Performed by",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "WashingPerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        },
+                                        "valueExpression": "expr/getuserfullnameparking"
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            },
+                            {
+                                "label": "Workshop",
+                                "type": "group",
+                                "visibilityExpression": "expr2",
+                                "formElements": [
+                                    {
+                                        "label": "Chain Maintenance Required",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "ChainMaintenanceRequired",
+                                        "inputType": {
+                                            "type": "switch",
+                                            "offValue": "No",
+                                            "onValue": "Yes"
+                                        }
+                                    },
+                                    {
+                                        "label": "Tire Change Required",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "TireChangeRequired",
+                                        "inputType": {
+                                            "type": "switch",
+                                            "offValue": "No",
+                                            "onValue": "Yes"
+                                        }
+                                    },
+                                    {
+                                        "label": "Time Arrived in Workshop",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "WorkshopTime",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        },
+                                        "valueExpression": "expr/currentdatemaintenance"
+                                    },
+                                    {
+                                        "label": "Put in Workshop by",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "WorkshopPerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        },
+                                        "valueExpression": "expr/getuserfullnameworkshop"
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            },
+                            {
+                                "label": "After Workshop",
+                                "type": "group",
+                                "visibilityExpression": "expr1",
+                                "formElements": [
+                                    {
+                                        "label": "Chain Maintenance Performed",
+                                        "type": "field",
+                                        "visibilityExpression": "expr7",
+                                        "editable": true,
+                                        "fieldName": "ChainMaintenancePerformed",
+                                        "inputType": {
+                                            "type": "switch",
+                                            "offValue": "No",
+                                            "onValue": "Yes"
+                                        }
+                                    },
+                                    {
+                                        "label": "Tire Maintenance Performed",
+                                        "type": "field",
+                                        "visibilityExpression": "expr6",
+                                        "editable": true,
+                                        "fieldName": "TireMaintenancePerformed",
+                                        "inputType": {
+                                            "type": "switch",
+                                            "offValue": "No",
+                                            "onValue": "Yes"
+                                        }
+                                    },
+                                    {
+                                        "label": "Time Maintenance Done",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "MaintenanceDoneTime",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        },
+                                        "valueExpression": "expr/currentdateparking1-copy"
+                                    },
+                                    {
+                                        "label": "Maintenance Performed by",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "MaintenancePerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        },
+                                        "valueExpression": "expr/getuserfullnameparking1-copy"
+                                    },
+                                    {
+                                        "label": "Showroom Ready?",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "ShowroomReady",
+                                        "inputType": {
+                                            "type": "combo-box",
+                                            "showNoValueOption": false
+                                        },
+                                        "valueExpression": "expr/showroomready"
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            },
+                            {
+                                "label": "Showroom",
+                                "type": "group",
+                                "visibilityExpression": "expr3",
+                                "formElements": [
+                                    {
+                                        "label": "Retail Price",
+                                        "type": "field",
+                                        "editable": true,
+                                        "fieldName": "RetailPrice",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "minLength": 0
+                                        }
+                                    },
+                                    {
+                                        "label": "Time Arrived in Showroom",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "ShowroomTime",
+                                        "inputType": {
+                                            "type": "datetime-picker",
+                                            "includeTime": true
+                                        },
+                                        "valueExpression": "expr/currentdateshowroom"
+                                    },
+                                    {
+                                        "label": "Put in Showroom by",
+                                        "type": "field",
+                                        "editable": false,
+                                        "fieldName": "ShowroomPerson",
+                                        "inputType": {
+                                            "type": "text-box",
+                                            "maxLength": 20,
+                                            "minLength": 0
+                                        },
+                                        "valueExpression": "expr/getuserfullnameshowroom"
+                                    }
+                                ],
+                                "initialState": "expanded"
+                            }
+                        ],
+                        "expressionInfos": [
+                            {
+                                "expression": "// DomainName($feature, \"Room\") == \"Parking\"\n\n\n// If the current Room is 'Parking' \n// and the ChainMaintenanceRequired or TireChangeRequired field is not empty fill the field\n\nfunction isNo(value) { return value == \"No\" };\n\n$feature.Room == 1 \n&& \n!All([$feature.ChainMaintenanceRequired, $feature.TireChangeRequired], isNo);\n",
+                                "name": "expr1",
+                                "returnType": "boolean",
+                                "title": "ParkingAfterWorkshop"
+                            },
+                            {
+                                "expression": "DomainName($feature, \"Room\") == \"Workshop\"",
+                                "name": "expr2",
+                                "returnType": "boolean",
+                                "title": "New Expression 3"
+                            },
+                            {
+                                "expression": "DomainName($feature, \"Room\") == \"Showroom\"",
+                                "name": "expr3",
+                                "returnType": "boolean",
+                                "title": "New Expression 4"
+                            },
+                            {
+                                "expression": "// Get the new Geometry from the Motorcycle\nvar motorcycleGeometry = Geometry($feature);\n\n// Get the Layer with Rooms as FeatureSet\nvar roomsLayer = FeatureSetById($map, /* Rooms */ \"1841d700082-layer-2\", [\"Room\"], true);\n\n// Intersect the Motorcycle Geometry with the Rooms\nvar intersectingRooms = Intersects(roomsLayer, motorcycleGeometry);\n\n// Check if the Motorcycle is in a Room, if to return the Room\nif (Count(intersectingRooms) > 0){\n    for (var result in intersectingRooms){\n        if (!IsEmpty(result[\"Room\"])){\n            return result[\"Room\"];\n        }\n    }\n}\nelse {\n    return null;\n}",
+                                "name": "expr/getroom",
+                                "returnType": "number",
+                                "title": "GetRoom"
+                            },
+                            {
+                                "expression": "// If the current Room is 'Washing' fill the field\nif ($feature.Room == 2){\n    return Now();    \n}\nelse {\n    return $originalFeature.TimeArrived;\n}\n",
+                                "name": "expr/currentdatewashing",
+                                "returnType": "date",
+                                "title": "CurrentDateWashing"
+                            },
+                            {
+                                "expression": "// If the current Room is 'Parking' \n// and the MaintenanceRequired field is empty fill the field\nfunction isNo(value) { return value == \"No\" }\nif ($editcontext.editType == \"UPDATE\"){\n    if ($feature.Room == 1 && \n        Any([$originalFeature.ChainMaintenanceRequired, $originalFeature.TireChangeRequired], isNo)\n        ){\n        return Now();\n    }\n    else {\n        return $originalFeature.WashingTime;\n    }\n}\nelse {\n    return null;\n}",
+                                "name": "expr/currentdateparking1",
+                                "returnType": "date",
+                                "title": "CurrentDateParking1"
+                            },
+                            {
+                                "expression": "if ($editcontext.editType == \"UPDATE\"){\n    // If the current Room is 'Workshop' fill the field\n    if ($feature.Room == 3){\n        return Now();    \n    }\n    else {\n        return $originalFeature.WorkshopTime;\n    }\n}\nelse {\n    return null;\n}",
+                                "name": "expr/currentdatemaintenance",
+                                "returnType": "date",
+                                "title": "CurrentDateMaintenance"
+                            },
+                            {
+                                "expression": "if ($editcontext.editType == \"UPDATE\"){\n    // If the current Room is 'Showroom' fill the field\n    if ($feature.Room == 4){\n        return Now();    \n    }\n    else {\n        return $originalFeature.ShowroomTime;\n    }\n}\nelse {\n    return null;\n}",
+                                "name": "expr/currentdateshowroom",
+                                "returnType": "date",
+                                "title": "CurrentDateShowroom"
+                            },
+                            {
+                                "expression": "// If the current Room is 'Washing' fill the field\nif ($feature.Room == 2){\n    // Get the information for the active User\n    var userInfo = GetUser(Portal(\"https://www.arcgis.com\"));\n    \n    // Return the full name\n    return userInfo[\"fullName\"];    \n}\nelse {\n    return $originalFeature.AcceptedPerson;\n}",
+                                "name": "expr/getuserfullnamewashing",
+                                "returnType": "string",
+                                "title": "GetUserFullNameWashing"
+                            },
+                            {
+                                "expression": "// If the current Room is 'Parking' fill the field\nfunction isNo(value) { return value == \"No\" }\nif ($editcontext.editType == \"UPDATE\"){\n    if ($feature.Room == 1 && \n        Any([$originalFeature.ChainMaintenanceRequired, $originalFeature.TireChangeRequired], isNo)\n        ){\n        // Get the information for the active User\n        var userInfo = GetUser(Portal(\"https://www.arcgis.com\"));\n        \n        // Return the full name\n        return userInfo[\"fullName\"];      \n    }\n    else {\n        return $originalFeature.WashingPerson;\n    }\n}\nelse {\n    return null;\n}\n",
+                                "name": "expr/getuserfullnameparking",
+                                "returnType": "string",
+                                "title": "GetUserFullNameParking1"
+                            },
+                            {
+                                "expression": "if ($editcontext.editType == \"UPDATE\"){\n    // If the current Room is 'Workshop' fill the field\n    if ($feature.Room == 3){\n        // Get the information for the active User\n        var userInfo = GetUser(Portal(\"https://www.arcgis.com\"));\n        \n        // Return the full name\n        return userInfo[\"fullName\"];    \n    }\n    else {\n        return $originalFeature.WorkshopPerson;\n    }\n}\nelse {\n    return null;\n}",
+                                "name": "expr/getuserfullnameworkshop",
+                                "returnType": "string",
+                                "title": "GetUserFullNameWorkshop"
+                            },
+                            {
+                                "expression": "if ($editcontext.editType == \"UPDATE\"){\n    // If the current Room is 'Showroom' fill the field\n    if ($feature.Room == 4){\n        // Get the information for the active User\n        var userInfo = GetUser(Portal(\"https://www.arcgis.com\"));\n        \n        // Return the full name\n        return userInfo[\"fullName\"];    \n    }\n    else {\n        return $originalFeature.ShowroomPerson;\n    }\n}\nelse {\n    return null;\n}",
+                                "name": "expr/getuserfullnameshowroom",
+                                "returnType": "string",
+                                "title": "GetUserFullNameShowroom"
+                            },
+                            {
+                                "expression": "// If the current Room is 'Parking' \n// and the ChainMaintenanceRequired or TireChangeRequired field is not empty fill the field\n\nfunction isEmptyField(value) { return !IsEmpty(value) }\n\nif ($editcontext.editType == \"UPDATE\"){\n    if ($feature.Room == 1 && \n        Any([$originalFeature.ChainMaintenanceRequired, $originalFeature.TireChangeRequired], isEmptyField)\n        ){\n        return Now();\n    }\n    else {\n        return $originalFeature.MaintenanceDoneTime;\n    }\n}\nelse {\n    return null;\n}",
+                                "name": "expr/currentdateparking1-copy",
+                                "returnType": "date",
+                                "title": "CurrentDateParking2"
+                            },
+                            {
+                                "expression": "// If the current Room is 'Parking' fill the field\nfunction isNotEmptyField(value) { return !IsEmpty(value) }\n\nif ($editcontext.editType == \"UPDATE\"){\n    if ($feature.Room == 1 && \n        Any([$originalFeature.ChainMaintenanceRequired, $originalFeature.TireChangeRequired], isNotEmptyField)\n        ){\n        // Get the information for the active User\n        var userInfo = GetUser(Portal(\"https://www.arcgis.com\"));\n        \n        // Return the full name\n        return userInfo[\"fullName\"];      \n    }\n    else {\n        return $originalFeature.WashingPerson;\n    }\n}\nelse {\n    return null;\n}",
+                                "name": "expr/getuserfullnameparking1-copy",
+                                "returnType": "string",
+                                "title": "GetUserFullNameParking2"
+                            },
+                            {
+                                "expression": "// DomainName($feature, \"Room\") == \"Parking\"\n\n\n// If the current Room is 'Parking' \n// and the ChainMaintenanceRequired or TireChangeRequired field is not empty fill the field\n\nfunction isNo(value) { return value == \"No\"};\n\n$feature.Room == 1 \n&& \nAll([$feature.ChainMaintenanceRequired, $feature.TireChangeRequired], isNo);\n",
+                                "name": "expr5",
+                                "returnType": "boolean",
+                                "title": "ParkingAfterWashing"
+                            },
+                            {
+                                "expression": "// Get the new Geometry from the Motorcycle\nvar motorcycleGeometry = Geometry($feature);\n\n// Get the Layer with Rooms as FeatureSet\nvar roomsLayer = FeatureSetById($map, /* Rooms */ \"1841d700082-layer-2\", [\"Room\", \"GlobalID\"], true);\n\n// Intersect the Motorcycle Geometry with the Rooms\nvar intersectingRooms = Intersects(roomsLayer, motorcycleGeometry);\n\n// Check if the Motorcycle is in a Room, if to return the Room GlobalID\nif (Count(intersectingRooms) > 0){\n    for (var result in intersectingRooms){\n        if (!(IsEmpty(result[\"Room\"]))){\n            return result[\"GlobalID\"];\n        }\n    }\n    \n}\nelse {\n    return null;\n}\n",
+                                "name": "expr/getroom-copy",
+                                "returnType": "number",
+                                "title": "GetRoom_GlobalID"
+                            },
+                            {
+                                "expression": "DomainName($feature, \"TireChangeRequired\") == \"Yes\"",
+                                "name": "expr6",
+                                "returnType": "boolean",
+                                "title": "New Expression 6"
+                            },
+                            {
+                                "expression": "DomainName($feature, \"ChainMaintenanceRequired\") == \"Yes\"",
+                                "name": "expr7",
+                                "returnType": "boolean",
+                                "title": "New Expression 7"
+                            },
+                            {
+                                "expression": "// Function to check if maintenance is performed\nfunction notPerformed(value) { return value == \"No\" };\n\n// The maintenanceRequired field has not yet been filled\nif (IsEmpty($feature.MaintenanceRequired)){\n    return \"No\";\n}\n// No maintenance is required\nelse if ($feature.MaintenanceRequired == \"Yes\"){\n    \n    // Check if maintenance is performed\n    if (All([$feature.ChainMaintenancePerformed, $feature.TireMaintenancePerformed], notPerformed)){\n        return \"No\";\n    }\n    // Check tire maintenance\n    if ($feature.TireChangeRequired == \"Yes\"){\n        if ($feature.TireChangeRequired != $feature.TireMaintenancePerformed){\n            return \"No\";    \n        }\n    }\n    // Check chain maintenance\n    if ($feature.ChainMaintenanceRequired == \"Yes\") {\n        if ($feature.ChainMaintenanceRequired != $feature.ChainMaintenancePerformed){\n            return \"No\";    \n        }\n    }\n}\n\n// Otherwise the motorcycle is showroom ready\nreturn \"Yes\";",
+                                "name": "expr/showroomready",
+                                "returnType": "string",
+                                "title": "ShowroomReady"
+                            }
+                        ],
+                        "preserveFieldValuesWhenHidden": true,
+                        "title": "Motorcycle"
+                    },
+                    "popupInfo": {
+                        "popupElements": [
+                            {
+                                "type": "fields",
+                                "description": "",
+                                "fieldInfos": [
+                                    {
+                                        "fieldName": "Room",
+                                        "format": {
+                                            "digitSeparator": false,
+                                            "places": 0
+                                        },
+                                        "isEditable": true,
+                                        "label": "Room",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "TimeArrived",
+                                        "isEditable": true,
+                                        "label": "Time Arrived in Shop",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "AcceptedPerson",
+                                        "isEditable": true,
+                                        "label": "Accepted by",
+                                        "visible": true
+                                    }
+                                ],
+                                "title": "General"
+                            },
+                            {
+                                "type": "fields",
+                                "description": "",
+                                "fieldInfos": [
+                                    {
+                                        "fieldName": "LicensePlate",
+                                        "isEditable": true,
+                                        "label": "License Plate",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "Manufacturer",
+                                        "isEditable": true,
+                                        "label": "Manufacturer",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "Model",
+                                        "isEditable": true,
+                                        "label": "Model",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "ManYear",
+                                        "format": {
+                                            "digitSeparator": false,
+                                            "places": 0
+                                        },
+                                        "isEditable": true,
+                                        "label": "Year",
+                                        "visible": true
+                                    },
+                                    {
+                                        "fieldName": "expression/expr0",
+                                        "visible": true
+                                    }
+                                ],
+                                "title": "Motorcycle"
+                            },
+                            {
+                                "type": "expression",
+                                "expressionInfo": {
+                                    "title": "Washing",
+                                    "expression": "/* \r\nOpen the Suggestions tab and choose a template to get started creating different content types for your pop-up. \r\nTo learn more about using Arcade to create pop-up content visit: \r\nhttps://developers.arcgis.com/arcade/guide/profiles/#popup-element \r\n*/\r\nvar fieldInfos = [];\r\nvar attributes = {};\r\n\r\n// 11/11/2022, 3:18 PM\r\nif (!IsEmpty($feature.WashingTime)){\r\n  Push(fieldInfos, {fieldName: \"Time washing done\"});\r\n\tattributes[\"Time washing done\"] = Text($feature.WashingTime, \"DD/MM/Y, h:mm A\");\r\n}\r\n\r\nif (!IsEmpty($feature.WashingPerson)){\r\n  Push(fieldInfos, {fieldName: \"Washing performed by\"});\r\n\tattributes[\"Washing performed by\"] = $feature.WashingPerson;\r\n}\r\nif (Count(fieldInfos) > 0){\r\n  return {\r\n      type: 'fields',\r\n      title: 'Washing',\r\n      fieldInfos:  fieldInfos,\r\n      attributes : attributes\r\n    }\r\n  }\r\n  else {\r\n    return null;\r\n  }",
+                                    "returnType": "dictionary"
+                                }
+                            },
+                            {
+                                "type": "expression",
+                                "expressionInfo": {
+                                    "title": "Maintenance",
+                                    "expression": "/* \r\nOpen the Suggestions tab and choose a template to get started creating different content types for your pop-up. \r\nTo learn more about using Arcade to create pop-up content visit: \r\nhttps://developers.arcgis.com/arcade/guide/profiles/#popup-element \r\n*/\r\nvar fieldInfos = [];\r\nvar attributes = {};\r\n\r\nif ($feature.MaintenanceRequired == \"Yes\"){\r\n\tif ($feature.ChainMaintenanceRequired == \"Yes\"){\r\n\t\tPush(fieldInfos, {fieldName: \"Chain maintenance performed\"});\r\n\t\tattributes[\"Chain maintenance performed\"] = $feature.ChainMaintenancePerformed;\r\n\t}\r\n\tif ($feature.TireChangeRequired == \"Yes\"){\r\n\t\tPush(fieldInfos, {fieldName: \"Tire change performed\"});\r\n\t\tattributes[\"Tire change performed\"] = $feature.TireMaintenancePerformed;\r\n\t}\r\n}\r\n// 11/11/2022, 3:18 PM\r\nif (!IsEmpty($feature.MaintenanceDoneTime)){\r\n  Push(fieldInfos, {fieldName: \"Time maintenance done\"});\r\n\tattributes[\"Time maintenance done\"] = Text($feature.MaintenanceDoneTime, \"DD/MM/Y, h:mm A\");\r\n}\r\n\r\nif (!IsEmpty($feature.MaintenancePerson)){\r\n  Push(fieldInfos, {fieldName: \"Maintenance performed by\"});\r\n\tattributes[\"Maintenance performed by\"] = $feature.MaintenancePerson;\r\n}\r\n\r\nif (Count(fieldInfos) > 0){\r\n  return {\r\n      type: 'fields',\r\n      title: 'Maintenance',\r\n      fieldInfos:  fieldInfos,\r\n      attributes : attributes\r\n    }\r\n}\r\nelse {\r\n  return null;\r\n}",
+                                    "returnType": "dictionary"
+                                }
+                            },
+                            {
+                                "type": "expression",
+                                "expressionInfo": {
+                                    "title": "Showroom",
+                                    "expression": "/* \r\nOpen the Suggestions tab and choose a template to get started creating different content types for your pop-up. \r\nTo learn more about using Arcade to create pop-up content visit: \r\nhttps://developers.arcgis.com/arcade/guide/profiles/#popup-element \r\n*/\r\nvar fieldInfos = [];\r\nvar attributes = {};\r\n\r\nif (!IsEmpty($feature.RetailPrice)){\r\n  Push(fieldInfos, {fieldName: \"Retail price\"});\r\n\tattributes[\"Retail price\"] = Text($feature.RetailPrice, \"€ #,###.-\");\r\n}\r\n\r\n// 11/11/2022, 3:18 PM\r\nif (!IsEmpty($feature.ShowroomTime)){\r\n  Push(fieldInfos, {fieldName: \"Time put in showroom\"});\r\n\tattributes[\"Time put in showroom\"] = Text($feature.ShowroomTime, \"DD/MM/Y, h:mm A\");\r\n}\r\n\r\nif (!IsEmpty($feature.ShowroomPerson)){\r\n  Push(fieldInfos, {fieldName: \"Put in showroom by\"});\r\n\tattributes[\"Put in showroom by\"] = $feature.ShowroomPerson;\r\n}\r\n\r\nif (Count(fieldInfos) > 0){\r\n  return {\r\n      type: 'fields',\r\n      title: 'Showroom',\r\n      fieldInfos:  fieldInfos,\r\n      attributes : attributes\r\n    }\r\n  }\r\n  else {\r\n    return null;\r\n  }",
+                                    "returnType": "dictionary"
+                                }
+                            }
+                        ],
+                        "expressionInfos": [
+                            {
+                                "name": "expr0",
+                                "title": "PurchasePrice Euro's",
+                                "expression": "return Text($feature.PurchasePrice, \"€ #,###.-\");",
+                                "returnType": "string"
+                            }
+                        ],
+                        "fieldInfos": [
+                            {
+                                "fieldName": "OBJECTID",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "label": "OBJECTID",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "GlobalID",
+                                "label": "GlobalID",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "RoomGlobalID",
+                                "isEditable": true,
+                                "label": "Room GlobalID",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "ShowroomTime",
+                                "isEditable": true,
+                                "label": "Time Arrived in Showroom",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "AcceptedPerson",
+                                "isEditable": true,
+                                "label": "Accepted by",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "TimeArrived",
+                                "isEditable": true,
+                                "label": "Time Arrived in Shop",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "PurchasePrice",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": true,
+                                "label": "Purchase Price",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "ManYear",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "Year",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "Model",
+                                "isEditable": true,
+                                "label": "Model",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "Manufacturer",
+                                "isEditable": true,
+                                "label": "Manufacturer",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "LicensePlate",
+                                "isEditable": true,
+                                "label": "License Plate",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "ChainMaintenanceRequired",
+                                "isEditable": true,
+                                "label": "Chain Maintenance Required",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "WashingPerson",
+                                "isEditable": true,
+                                "label": "Washing Performed by",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "WashingTime",
+                                "isEditable": true,
+                                "label": "Time Washing Done",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "MaintenanceRequired",
+                                "isEditable": true,
+                                "label": "Maintenance Required",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "ShowroomPerson",
+                                "isEditable": true,
+                                "label": "Put in Showroom by",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "WorkshopPerson",
+                                "isEditable": true,
+                                "label": "Put in Workshop by",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "WorkshopTime",
+                                "isEditable": true,
+                                "label": "Time Arrived in Workshop",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "MaintenancePerson",
+                                "isEditable": true,
+                                "label": "Maintenance Performed by",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "MaintenanceDoneTime",
+                                "isEditable": true,
+                                "label": "Time Maintenance Done",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "ChainMaintenancePerformed",
+                                "isEditable": true,
+                                "label": "Chain Maintenance Performed",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "RetailPrice",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": true,
+                                "label": "Retail Price",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "ShowroomReady",
+                                "isEditable": true,
+                                "label": "Showroom Ready?",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "Room",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "Room",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "TireChangeRequired",
+                                "label": "TireChangeRequired",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "TireMaintenancePerformed",
+                                "label": "TireMaintenancePerformed",
+                                "visible": false
+                            },
+                            {
+                                "fieldName": "expression/expr0",
+                                "visible": true
+                            }
+                        ],
+                        "title": "{Manufacturer} | {LicensePlate}"
+                    },
+                    "layerDefinition": {
+                        "drawingInfo": {
+                            "renderer": {
+                                "type": "uniqueValue",
+                                "visualVariables": [
+                                    {
+                                        "type": "sizeInfo",
+                                        "valueExpression": "$view.scale",
+                                        "stops": [
+                                            {
+                                                "size": 12.299562682215743,
+                                                "value": 141.062147
+                                            },
+                                            {
+                                                "size": 9.839650145772595,
+                                                "value": 1128.4971765
+                                            },
+                                            {
+                                                "size": 4.919825072886297,
+                                                "value": 9027.977411
+                                            },
+                                            {
+                                                "size": 2.4599125364431487,
+                                                "value": 72223.819286
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "field1": "Manufacturer",
+                                "uniqueValueGroups": [
+                                    {
+                                        "classes": [
+                                            {
+                                                "label": "BMW",
+                                                "symbol": {
+                                                    "type": "esriSMS",
+                                                    "color": [
+                                                        255,
+                                                        255,
+                                                        255,
+                                                        255
+                                                    ],
+                                                    "angle": 0,
+                                                    "xoffset": 0,
+                                                    "yoffset": 0,
+                                                    "size": 11.25,
+                                                    "style": "esriSMSCircle",
+                                                    "outline": {
+                                                        "type": "esriSLS",
+                                                        "color": [
+                                                            153,
+                                                            153,
+                                                            153,
+                                                            230
+                                                        ],
+                                                        "width": 3,
+                                                        "style": "esriSLSSolid"
+                                                    }
+                                                },
+                                                "values": [
+                                                    [
+                                                        "BMW"
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "label": "Honda",
+                                                "symbol": {
+                                                    "type": "esriSMS",
+                                                    "color": [
+                                                        255,
+                                                        17,
+                                                        0,
+                                                        255
+                                                    ],
+                                                    "angle": 0,
+                                                    "xoffset": 0,
+                                                    "yoffset": 0,
+                                                    "size": 11.25,
+                                                    "style": "esriSMSCircle",
+                                                    "outline": {
+                                                        "type": "esriSLS",
+                                                        "color": [
+                                                            153,
+                                                            153,
+                                                            153,
+                                                            230
+                                                        ],
+                                                        "width": 3,
+                                                        "style": "esriSLSSolid"
+                                                    }
+                                                },
+                                                "values": [
+                                                    [
+                                                        "HON"
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "label": "Yamaha",
+                                                "symbol": {
+                                                    "type": "esriSMS",
+                                                    "color": [
+                                                        62,
+                                                        154,
+                                                        240,
+                                                        255
+                                                    ],
+                                                    "angle": 0,
+                                                    "xoffset": 0,
+                                                    "yoffset": 0,
+                                                    "size": 11.25,
+                                                    "style": "esriSMSCircle",
+                                                    "outline": {
+                                                        "type": "esriSLS",
+                                                        "color": [
+                                                            153,
+                                                            153,
+                                                            153,
+                                                            230
+                                                        ],
+                                                        "width": 3,
+                                                        "style": "esriSLSSolid"
+                                                    }
+                                                },
+                                                "values": [
+                                                    [
+                                                        "YAM"
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "label": "KTM",
+                                                "symbol": {
+                                                    "type": "esriSMS",
+                                                    "color": [
+                                                        255,
+                                                        136,
+                                                        0,
+                                                        255
+                                                    ],
+                                                    "angle": 0,
+                                                    "xoffset": 0,
+                                                    "yoffset": 0,
+                                                    "size": 11.25,
+                                                    "style": "esriSMSCircle",
+                                                    "outline": {
+                                                        "type": "esriSLS",
+                                                        "color": [
+                                                            153,
+                                                            153,
+                                                            153,
+                                                            230
+                                                        ],
+                                                        "width": 3,
+                                                        "style": "esriSLSSolid"
+                                                    }
+                                                },
+                                                "values": [
+                                                    [
+                                                        "KTM"
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "label": "Kawasaki",
+                                                "symbol": {
+                                                    "type": "esriSMS",
+                                                    "color": [
+                                                        26,
+                                                        201,
+                                                        6,
+                                                        255
+                                                    ],
+                                                    "angle": 0,
+                                                    "xoffset": 0,
+                                                    "yoffset": 0,
+                                                    "size": 11.25,
+                                                    "style": "esriSMSCircle",
+                                                    "outline": {
+                                                        "type": "esriSLS",
+                                                        "color": [
+                                                            153,
+                                                            153,
+                                                            153,
+                                                            230
+                                                        ],
+                                                        "width": 3,
+                                                        "style": "esriSLSSolid"
+                                                    }
+                                                },
+                                                "values": [
+                                                    [
+                                                        "KAW"
+                                                    ]
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "uniqueValueInfos": [
+                                    {
+                                        "label": "BMW",
+                                        "symbol": {
+                                            "type": "esriSMS",
+                                            "color": [
+                                                255,
+                                                255,
+                                                255,
+                                                255
+                                            ],
+                                            "angle": 0,
+                                            "xoffset": 0,
+                                            "yoffset": 0,
+                                            "size": 11.25,
+                                            "style": "esriSMSCircle",
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    153,
+                                                    153,
+                                                    153,
+                                                    230
+                                                ],
+                                                "width": 3,
+                                                "style": "esriSLSSolid"
+                                            }
+                                        },
+                                        "value": "BMW"
+                                    },
+                                    {
+                                        "label": "Honda",
+                                        "symbol": {
+                                            "type": "esriSMS",
+                                            "color": [
+                                                255,
+                                                17,
+                                                0,
+                                                255
+                                            ],
+                                            "angle": 0,
+                                            "xoffset": 0,
+                                            "yoffset": 0,
+                                            "size": 11.25,
+                                            "style": "esriSMSCircle",
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    153,
+                                                    153,
+                                                    153,
+                                                    230
+                                                ],
+                                                "width": 3,
+                                                "style": "esriSLSSolid"
+                                            }
+                                        },
+                                        "value": "HON"
+                                    },
+                                    {
+                                        "label": "Yamaha",
+                                        "symbol": {
+                                            "type": "esriSMS",
+                                            "color": [
+                                                62,
+                                                154,
+                                                240,
+                                                255
+                                            ],
+                                            "angle": 0,
+                                            "xoffset": 0,
+                                            "yoffset": 0,
+                                            "size": 11.25,
+                                            "style": "esriSMSCircle",
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    153,
+                                                    153,
+                                                    153,
+                                                    230
+                                                ],
+                                                "width": 3,
+                                                "style": "esriSLSSolid"
+                                            }
+                                        },
+                                        "value": "YAM"
+                                    },
+                                    {
+                                        "label": "KTM",
+                                        "symbol": {
+                                            "type": "esriSMS",
+                                            "color": [
+                                                255,
+                                                136,
+                                                0,
+                                                255
+                                            ],
+                                            "angle": 0,
+                                            "xoffset": 0,
+                                            "yoffset": 0,
+                                            "size": 11.25,
+                                            "style": "esriSMSCircle",
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    153,
+                                                    153,
+                                                    153,
+                                                    230
+                                                ],
+                                                "width": 3,
+                                                "style": "esriSLSSolid"
+                                            }
+                                        },
+                                        "value": "KTM"
+                                    },
+                                    {
+                                        "label": "Kawasaki",
+                                        "symbol": {
+                                            "type": "esriSMS",
+                                            "color": [
+                                                26,
+                                                201,
+                                                6,
+                                                255
+                                            ],
+                                            "angle": 0,
+                                            "xoffset": 0,
+                                            "yoffset": 0,
+                                            "size": 11.25,
+                                            "style": "esriSMSCircle",
+                                            "outline": {
+                                                "type": "esriSLS",
+                                                "color": [
+                                                    153,
+                                                    153,
+                                                    153,
+                                                    230
+                                                ],
+                                                "width": 3,
+                                                "style": "esriSLSSolid"
+                                            }
+                                        },
+                                        "value": "KAW"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ],
+            "layerType": "GroupLayer"
+        }
+    ],
+    "baseMap": {
+        "baseMapLayers": [
+            {
+                "id": "VectorTile_1970",
+                "opacity": 1,
+                "title": "Light Gray Base",
+                "visibility": true,
+                "layerType": "VectorTileLayer",
+                "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/291da5eab3a0412593b66d384379f89f/resources/styles/root.json"
+            },
+            {
+                "id": "VectorTile_7117",
+                "opacity": 1,
+                "title": "Light Gray Reference",
+                "visibility": true,
+                "layerType": "VectorTileLayer",
+                "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/1768e8369a214dfab4e2167d5c5f2454/resources/styles/root.json",
+                "isReference": true
+            }
+        ],
+        "title": "Light Gray Canvas"
+    },
+    "authoringApp": "ArcGIS Field Maps",
+    "authoringAppVersion": "22.3.0+301a625",
+    "geotriggersInfo": {
+        "geotriggers": []
+    },
+    "initialState": {
+        "viewpoint": {
+            "rotation": 0.8287179784783366,
+            "targetGeometry": {
+                "spatialReference": {
+                    "latestWkid": 3857,
+                    "wkid": 102100
+                },
+                "xmin": 1490742.3290560984,
+                "ymin": 6893107.40171098,
+                "xmax": 1490984.4791729746,
+                "ymax": 6893297.449244138
+            }
+        }
+    },
+    "spatialReference": {
+        "latestWkid": 3857,
+        "wkid": 102100
+    },
+    "version": "2.26"
+}
