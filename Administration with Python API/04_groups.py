@@ -7,7 +7,7 @@ print("Successfully logged into '{}' via the '{}' user".format(gis.properties.po
 
 # CREATE A NEW GROUP
 GroupTitle = "Doomed To Stay"
-GroupDescription = "This is a group created for the EU DevSummit 2022. The word is:"
+GroupDescription = "This is a group created for the EU DevSummit 2022. The word is: BMW!!"
 GroupTags = "DevSummit2022, Demo, NoLeaving"
 
 foundGroups = gis.groups.search(f'title:{GroupTitle}')
