@@ -1,0 +1,244 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <title>Formula 1</title>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet"
+        href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/css/calcite-web.min.css" />
+    <link rel="stylesheet" href="https://jsdev.arcgis.com/4.16/esri/themes/light/main.css" />
+    <script src="https://jsdev.arcgis.com/4.16/"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        #header {
+            height: 60px;
+            padding: 10px 0px 0px 15px;
+
+        }
+
+        #header:after {
+            content: ' ';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 70px;
+
+            opacity: 0.6;
+            background-image: url('images/maxresdefault.jpg');
+            background-repeat: no-repeat;
+            background-position: 50% 0;
+            background-size: cover;
+            mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        }
+
+        .footer {
+            padding-top: 0px;
+        }
+
+        #bodywrapper {
+            display: block;
+            height: 100%;
+        }
+
+        #sidepanel {
+            padding: 10px;
+            /* background-color: #FF9300; */
+            width: 300px;
+        }
+    </style>
+    <script>
+        var f1baseUrl = "https://ergast.com/api/f1/"
+        //f1baseUrl = "https://localhost/DevDay21/"
+
+
+
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/widgets/Expand",
+            "esri/request",
+            "esri/layers/GraphicsLayer",
+
+            "esri/Graphic",
+
+            "dojo/on"
+        ], function (
+            Map, MapView, Expand, esriRequest, GraphicsLayer,
+            Graphic,
+            on
+
+        ) {
+            const selTeam = document.getElementById("selTeam");
+            const btnGo = document.getElementById("btnGo")
+            const map = new Map({
+                basemap: "gray-vector"
+            });
+            const circuitsLayer = new GraphicsLayer({
+                id: "circuitsLayer",
+                title: "Circuits"
+            });
+
+            map.layers.add(circuitsLayer);
+            const view = new MapView({
+                container: "viewDiv",
+                map: map,
+                center: [6.1, 52.5],
+                zoom: 2
+            });
+
+            var expand = new Expand({
+                // see for icons: https://developers.arcgis.com/javascript/latest/esri-icon-font/
+                //*expandIconClass: "esri-icon-right-arrow",  
+
+                view: view,
+                content: document.getElementById("myPanel")
+            });
+            view.ui.add(expand, "top-right");
+
+            view.ui.add(new Expand({ view: view, content: document.getElementById("codePanel") ,expandIconClass:"esri-icon-documentation"}), "bottom-right");
+
+            view.when(() => {
+
+            });
+            allTeamsurl = `${f1baseUrl}/constructors.json?limit=300`;
+            esriRequest(allTeamsurl, { responseType: "json" }).then((response) => {
+                console.log(response)
+                var constructors = response.data.MRData.ConstructorTable.Constructors;
+
+                constructors.forEach(element => {
+                    console.log(element);
+                    var option = document.createElement("option");
+                    option.value = element.constructorId;
+                    option.text = element.name;
+
+                    if (element.constructorId == "mclaren") {
+                        option.selected = true;
+                    }
+
+                    selTeam.add(option);
+
+
+
+                });
+            });
+
+            on(btnGo, "click", (evt) => {
+                var teamid = selTeam.value;
+                console.log(teamid);
+                circuitsLayer.graphics.removeAll();
+                var circuitUrl = `${f1baseUrl}/constructors/${teamid}/circuits.json?limit=300`
+                esriRequest(circuitUrl, { responseType: "json" }).then((response) => {
+                    console.log(response)
+                    var circuits = response.data.MRData.CircuitTable.Circuits;
+                    circuits.forEach(circuit => {
+                        var graphic = new Graphic({
+                            geometry: {
+                                type: "point",  // autocasts as new Point()
+                                longitude: circuit.Location.long,
+                                latitude: circuit.Location.lat
+                            },
+                            symbol: {
+                                type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+                                color: "blue",
+                                size: 8,
+                                outline: { // autocasts as new SimpleLineSymbol()
+                                    width: 0.5,
+                                    color: "darkblue"
+                                }
+                            },
+                            attributes: {
+                                circuitId: circuit.circuitId,
+                                circuitName: circuit.circuitName,
+                                url: circuit.url
+                            },
+                            popupTemplate: {
+                                title: "{circuitName}",
+                                content: [{
+                                    // Pass in the fields to display
+                                    type: "fields",
+                                    fieldInfos: [{
+                                        fieldName: "circuitName",
+                                        label: "Name"
+                                    }, {
+                                        fieldName: "url",
+                                        label: "url"
+                                    }]
+                                }]
+                            }
+
+                        });
+                        circuitsLayer.add(graphic);
+                    });
+                });
+                AddAction("F1TeamClick", teamid);
+
+
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="header" class="panel-dark-blue">
+        
+            <h1 style="float:left;">Formula 1</h1>https://ergast.com/
+        
+    </div>
+    <div id="viewDiv"></div>
+    <div class="panel" id="myPanel">F1 Lists:
+        <label>
+            Select a F1 team:
+            <select id="selTeam">
+            </select>
+        </label>
+        <button class="btn" id="btnGo">Show Locations</button>
+
+    </div>
+    <div class="panel" id="codePanel">
+        <h1>Code</h1><!-- HTML generated using hilite.me -->
+        <div style="background: #ffffff; overflow:auto;width:1050px;height:450px;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;font-size: x-large;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">var</span> circuits = response.data.MRData.CircuitTable.Circuits;
+circuits.forEach(circuit =&gt; {
+    <span style="color: #0000ff">var</span> graphic = <span style="color: #0000ff">new</span> Graphic({
+        geometry: {
+            type: <span style="color: #a31515">&quot;point&quot;</span>,  <span style="color: #008000">// autocasts as new Point()</span>
+            longitude: circuit.Location.<span style="color: #0000ff">long</span>,
+            latitude: circuit.Location.lat
+        },
+        ...
+        attributes: {
+            circuitId: circuit.circuitId,
+            circuitName: circuit.circuitName,
+            url: circuit.url
+        },
+        ...
+        </pre>
+        </div>
+    </div>
+    <div class="footer" role="contentinfo">
+        <!-- content of footer -->
+        <div class="esri-logo"></div>
+    </div>
+</body>
+<script src="https://esrinederland.github.io/CoolMonitor/CoolMonitor.js"></script>
+</html>
